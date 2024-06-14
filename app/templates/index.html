@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <p>Spam Classification</p>
+    </div>
+    
+    <div class="container-1">
+        <form id="messageForm">
+            <div class="input">
+                <label for="message">Enter message:</label><br>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <button type="submit" id="submit">Submit</button><br><br>
+        </form>
+    <label for="result">Output : </label><br>
+    <textarea name="result" id="result"></textarea>
+    </div>
+    
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = 'Prediction: ' + data.prediction;
+            });
+        });
+    </script>
+</body>
+</html>

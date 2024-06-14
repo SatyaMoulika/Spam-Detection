@@ -1,0 +1,40 @@
+body {
+    background:url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+    text-align: center;
+    font-weight: bolder;
+    font-size:300%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(0, 0, 0);
+}
+
+textarea {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    border-width: 5px;
+    border-color: coral;
+    border-radius:10px;
+
+}
+
+input {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    border-width: 5px;
+    border-color: coral;
+    border-radius:10px;
+}
+
+button {
+    border-radius: 5px;
+    background-color: coral;
+    color: azure;
+}
+
+label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
